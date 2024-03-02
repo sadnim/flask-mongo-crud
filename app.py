@@ -3,6 +3,11 @@ from pymongo import MongoClient
 from bson import ObjectId
 import os
 from dotenv import load_dotenv
+import inspect
+
+if not hasattr(inspect, 'getargspec'):
+    inspect.getargspec = inspect.getfullargspec
+
 
 app = Flask(__name__)
 
